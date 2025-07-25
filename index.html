@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warning Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #020202;
+      overflow: hidden;
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    .warning-container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .scrolling-text {
+      position: absolute;
+      white-space: nowrap;
+      color: white;
+      font-size: 2.5rem;
+      letter-spacing: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .scroll-top {
+      top: 20%;
+      animation: scrollLeft 10s linear infinite;
+    }
+
+    .scroll-bottom {
+      bottom: 20%;
+      animation: scrollRight 10s linear infinite;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes scrollRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .center-warning {
+      font-size: 8rem;
+      padding: 20px 40px;
+      color: #ff0000;
+      background: rgba(255, 0, 0, 0.1);
+      border: 3px solid #ff1a1a;
+      border-radius: 15px;
+      cursor: pointer;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff1a1a, 0 0 40px #ff3333;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+
+    .center-warning:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff1a1a;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff3333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="warning-container">
+    <div class="scrolling-text scroll-top">WARNING! WARNING! WARNING! WARNING!</div>
+
+    <!-- Center clickable warning button -->
+    <a href="itshappening.html" class="center-warning">WARNING !</a>
+
+    <div class="scrolling-text scroll-bottom">WARNING! WARNING! WARNING! WARNING!</div>
+  </div>
+</body>
+</html>

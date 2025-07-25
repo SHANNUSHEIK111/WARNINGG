@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It’s Happening</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: radial-gradient(circle at center, #111111, #000000);
+      font-family: 'Impact', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .its, .happening {
+      position: absolute;
+      color: white;
+      font-size: 10vw;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff3333, 0 0 80px #ff6666;
+      white-space: nowrap;
+      text-transform: uppercase;
+      animation-fill-mode: forwards;
+    }
+
+    .its {
+      top: -60%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: dropDown 1.8s ease-out forwards;
+    }
+
+    .happening {
+      top: 60%;
+      left: -100%;
+      animation: slideIn 1.8s ease-out forwards;
+    }
+
+    @keyframes dropDown {
+      to {
+        top: 35%;
+      }
+    }
+
+    @keyframes slideIn {
+      to {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="its">IT'S</div>
+    <div class="happening">HAPPENING</div>
+  </div>
+</body>
+</html>
